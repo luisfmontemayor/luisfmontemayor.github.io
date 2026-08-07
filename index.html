@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Luis Felipe Montemayor Briceno</title>
+    <link href="dist/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Geist:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col overflow-x-hidden"
+  >
+    <header
+      class="w-full border-b border-outline-variant bg-surface flex items-center sticky top-0 z-50 h-[72px]"
+    >
+      <div class="page-gutter flex justify-between items-center">
+        <a
+          class="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity"
+          href="#"
+        >
+          <h1
+            class="font-mono-label-md font-bold text-primary-container tracking-widest uppercase text-headline-md"
+          >
+            Luis Felipe Montemayor Briceno
+          </h1>
+        </a>
+        <nav class="hidden md:flex items-center gap-6">
+          <div class="flex items-center gap-2 rounded-full">
+            <a class="group nav-pill" href="#about"
+              ><span class="nav-pill-body"
+                ><span class="material-symbols-outlined nav-pill-icon">person</span
+                ><span class="nav-pill-label">About</span></span
+              ></a
+            >
+            <a class="group nav-pill" href="#employment"
+              ><span class="nav-pill-body"
+                ><span class="material-symbols-outlined nav-pill-icon">work</span
+                ><span class="nav-pill-label">Employment</span></span
+              ></a
+            >
+            <a class="group nav-pill" href="#research"
+              ><span class="nav-pill-body"
+                ><span class="material-symbols-outlined nav-pill-icon">science</span
+                ><span class="nav-pill-label">Research</span></span
+              ></a
+            >
+            <a class="group nav-pill" href="#builds"
+              ><span class="nav-pill-body"
+                ><span class="material-symbols-outlined nav-pill-icon">terminal</span
+                ><span class="nav-pill-label">Builds</span></span
+              ></a
+            >
+            <a class="group nav-pill" href="#education"
+              ><span class="nav-pill-body"
+                ><span class="material-symbols-outlined nav-pill-icon">school</span
+                ><span class="nav-pill-label">Education</span></span
+              ></a
+            >
+          </div>
+          <a
+            class="btn-primary ml-4 px-6 py-3 text-[16px]"
+            href="cv.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="material-symbols-outlined text-[24px]">download</span><span>CV</span>
+          </a>
+        </nav>
+        <button
+          class="md:hidden p-2 text-on-surface"
+          id="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-controls="mobile-drawer"
+          aria-expanded="false"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </header>
+    <div
+      class="hidden md:hidden fixed inset-x-0 top-[72px] z-40 flex flex-col gap-1 border-b border-outline-variant bg-surface p-4"
+      id="mobile-drawer"
+    >
+      <a class="drawer-link" href="#about">About</a>
+      <a class="drawer-link" href="#employment">Employment</a>
+      <a class="drawer-link" href="#research">Research</a>
+      <a class="drawer-link" href="#builds">Builds</a>
+      <a class="drawer-link" href="#education">Education</a>
+      <a
+        class="btn-primary mt-2 justify-center px-6 py-3 text-[16px]"
+        href="cv.pdf"
+        target="_blank"
+        rel="noopener"
+        ><span class="material-symbols-outlined text-[24px]">download</span>CV</a
+      >
+    </div>
+    <main class="flex-1 min-h-screen flex flex-col relative w-full" id="main-content">
+      <div class="flex-1 w-full page-gutter space-y-24 pb-24 pt-6 md:pt-10">
+        <!-- Intro Section -->
+        <section
+          class="grid grid-cols-1 lg:grid-cols-4 gap-y-8 lg:gap-y-0 lg:gap-x-12 w-full scroll-mt-[72px]"
+          id="about"
+        >
+          <h2 class="type-display lg:mb-8 lg:col-span-4 lg:row-start-1">
+            I'm Luis Felipe, nice to meet you!
+          </h2>
+          <div class="flow-root lg:col-span-3 lg:row-start-2">
+            <img
+              alt="Luis Felipe Montemayor Briceno"
+              class="w-full sm:w-[247px] md:w-[308px] xl:w-[369px] mb-6 sm:float-right sm:ml-8 xl:ml-12 h-auto object-cover rounded shadow-sm border border-outline-variant"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPt5FJQRtQaX9tYkQZ4clWNsV_IhFPXJVmH0M-aL4R3MZaWHElIgKQJ8C7B_DxnYEHtdOYVNOVpFHSym2NpdM91G0bxVCsvRNJbtPaj5zV3TJla_gaFTvNSx_MrcyZri_5tq2GH7lL962Mxa66ljQtyWhZlYYB-665FISH0e6fYvCwCStYIAf-rvG4xXJBVbxqNUSahrLkNQG-9iu7FmJDP62K1VGcWnqzUkuNYID6uwlB_1BIai1s4gv2wsTfEpbikf0bM2ewOb6n"
+            />
+            <p class="type-lead text-pretty">
+              I am a scientist-turned-engineer with a passion for innovation and building well-made
+              software solutions. Over the past 5 years, I have:&nbsp;<br />
+              &nbsp;<br />
+              - Full-stack software developer, with product experience across the clinical space,
+              data analysis platforms and agentic AI infrastructure.&nbsp;<br />
+              - Computational biologist with multi-omics expertise and published research<br />
+              - Research engineer with experience deploying scalable compute and storage systems
+              which boost R&amp;D delivery.
+            </p>
+            <p class="type-lead text-pretty mt-6">
+              I am a scientist and builder, in love with slim solutions to tricky problems which
+              previously appeared to be really hard to solve.
+            </p>
+          </div>
+          <div
+            aria-hidden="true"
+            class="hidden lg:block lg:col-start-4 lg:row-start-2 border-l border-outline-variant"
+          ></div>
+          <aside class="lg:col-start-4 lg:row-start-2 lg:pl-6 flex flex-col gap-6">
+            <h3 class="font-headline-md text-[24px] text-on-surface font-bold">Current Focus</h3>
+            <div class="focus-list">
+              <div class="focus-item">
+                <span class="focus-item-title">Job Hunt</span>
+                <span class="focus-item-content"
+                  >Hunting for roles in techbio, cutting-edge research and AI.</span
+                >
+              </div>
+              <div class="focus-item">
+                <span class="focus-item-title">Freelance Work</span>
+                <span class="focus-item-content"
+                  >Writing AI infrastructure and software for farms.</span
+                >
+              </div>
+              <div class="focus-item">
+                <span class="focus-item-title">ALS &amp; cfDNA</span>
+                <span class="focus-item-content"
+                  >Testing whether cfDNA can power strong ML classifiers for ALS.</span
+                >
+              </div>
+              <div class="focus-item">
+                <span class="focus-item-title">Scientific Computing</span>
+                <span class="focus-item-content"
+                  >Building telemetry and tooling for scientific computing.</span
+                >
+              </div>
+            </div>
+          </aside>
+        </section>
+        <div class="flex flex-col gap-24 w-full">
+          <!-- Employment Section -->
+          <section class="section" id="employment">
+            <h3 class="section-heading">Employment</h3>
+            <div class="timeline">
+              <div class="timeline-row">
+                <div class="timeline-rail">
+                  <div class="timeline-marker bg-primary-container"></div>
+                </div>
+                <div class="timeline-card w-full sm:flex-row justify-between sm:items-center">
+                  <div>
+                    <h4 class="timeline-card-title">Genpax</h4>
+                    <p class="timeline-card-content">Computational Biologist</p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-rail">
+                  <div class="timeline-marker bg-outline-variant"></div>
+                </div>
+                <div class="timeline-card w-full sm:flex-row justify-between sm:items-center">
+                  <div>
+                    <h4 class="timeline-card-title">Genpax</h4>
+                    <p class="timeline-card-content">Research Engineer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-rail">
+                  <div class="timeline-marker bg-outline-variant"></div>
+                </div>
+                <div class="timeline-card w-full sm:flex-row justify-between sm:items-center">
+                  <div>
+                    <h4 class="timeline-card-title">Beans</h4>
+                    <p class="timeline-card-content">Founding Full Stack Engineer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-rail">
+                  <div class="timeline-marker bg-outline-variant"></div>
+                </div>
+                <div class="timeline-card w-full sm:flex-row justify-between sm:items-center">
+                  <div>
+                    <h4 class="timeline-card-title">Independent Consultant</h4>
+                    <p class="timeline-card-content">
+                      AI Infrastructure for small scale agricultural projects
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-rail">
+                  <div class="timeline-marker bg-outline-variant"></div>
+                </div>
+                <div class="timeline-card w-full sm:flex-row justify-between sm:items-center">
+                  <div>
+                    <h4 class="timeline-card-title">Freelancer</h4>
+                    <p class="timeline-card-content">Website development</p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-rail">
+                  <div class="timeline-marker bg-outline-variant"></div>
+                </div>
+                <div class="timeline-card w-full sm:flex-row justify-between sm:items-center">
+                  <div>
+                    <h4 class="timeline-card-title">Current Focus</h4>
+                    <p class="timeline-card-content">Building a booking website</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Research Section -->
+          <section class="section" id="research">
+            <h3 class="section-heading">Research Experience</h3>
+            <div class="timeline">
+              <div class="timeline-row">
+                <div class="timeline-rail">
+                  <div class="timeline-marker bg-primary-container"></div>
+                </div>
+                <div class="timeline-card w-full">
+                  <h4 class="timeline-card-title">Gems Lab</h4>
+                  <p class="timeline-card-content">Undergraduate Research Assistant (3 years)</p>
+                  <p class="timeline-card-content">C. elegans biogerontology research.</p>
+                </div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-rail">
+                  <div class="timeline-marker bg-outline-variant"></div>
+                </div>
+                <div class="timeline-card w-full">
+                  <h4 class="timeline-card-title">Bahler Lab</h4>
+                  <p class="timeline-card-content">Research</p>
+                  <p class="timeline-card-content">S. pombe genome regulation.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Builds Section -->
+          <section class="section" id="builds">
+            <h3 class="section-heading text-[40px]">Builds</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="build-card gap-4">
+                <h4 class="build-card-title">Omics Pipeline</h4>
+                <p class="build-card-content">
+                  Scalable computational pipeline for processing and analyzing multi-omics datasets
+                  with integrated ML modules.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Nextflow</span>
+                </div>
+              </div>
+              <div class="build-card gap-4">
+                <h4 class="build-card-title">Beans App</h4>
+                <p class="build-card-content">
+                  A comprehensive full-stack application built for seamless user experiences and
+                  robust data management.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                </div>
+              </div>
+              <div class="build-card gap-4">
+                <h4 class="build-card-title">Agri-AI Infra</h4>
+                <p class="build-card-content">
+                  Deployed edge AI models to assist in monitoring and optimizing small-scale
+                  agricultural workflows.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="tech-tag">PyTorch</span>
+                  <span class="tech-tag">AWS</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Education Section -->
+          <section class="section" id="education">
+            <h3 class="section-heading">Education</h3>
+            <div class="timeline">
+              <div class="timeline-row">
+                <div class="timeline-rail">
+                  <div class="timeline-marker bg-primary-container"></div>
+                </div>
+                <div class="timeline-card w-full">
+                  <h4 class="timeline-card-title">UCL</h4>
+                  <p class="timeline-card-content">BSc in Cell Biology</p>
+                </div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-rail">
+                  <div class="timeline-marker bg-outline-variant"></div>
+                </div>
+                <div class="timeline-card w-full">
+                  <h4 class="timeline-card-title">UCL</h4>
+                  <p class="timeline-card-content">MSci in Cell Biology</p>
+                  <p class="timeline-card-content">
+                    Specialisation in computational biology, modules, techniques that I mastered in
+                    the labs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Contact Section -->
+          <section class="section" id="contact">
+            <h3 class="section-heading">Contact</h3>
+            <div class="bg-surface border border-outline-variant rounded p-6 flex flex-col">
+              <p class="font-body-md text-[20px] text-on-surface-variant">
+                I read every message — feel free to reach out to collaborate, ask a question, or
+                just say hi.
+              </p>
+              <ul class="contact-list mt-6 flex flex-col">
+                <li class="contact-item">
+                  <a
+                    class="contact-row group"
+                    id="contact-email"
+                    data-u="__EMAIL_U__"
+                    data-d="__EMAIL_D__"
+                  >
+                    <span class="contact-row-label"
+                      ><span class="material-symbols-outlined text-[20px]">mail</span>Email</span
+                    >
+                    <span class="contact-row-value"
+                      ><span id="contact-email-text">JavaScript required</span>
+                      <span class="material-symbols-outlined contact-row-arrow"
+                        >arrow_outward</span
+                      ></span
+                    >
+                  </a>
+                </li>
+                <li class="contact-item">
+                  <a
+                    class="contact-row group"
+                    href="https://github.com/luisfmontemayor"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span class="contact-row-label"
+                      ><img
+                        alt=""
+                        class="w-5 h-5"
+                        src="assets/images/Octicons-mark-github.svg"
+                      />GitHub</span
+                    >
+                    <span class="contact-row-value"
+                      >@luisfmontemayor
+                      <span class="material-symbols-outlined contact-row-arrow"
+                        >arrow_outward</span
+                      ></span
+                    >
+                  </a>
+                </li>
+                <li class="contact-item">
+                  <a class="contact-row group" href="#">
+                    <span class="contact-row-label"
+                      ><img
+                        alt=""
+                        class="w-5 h-5"
+                        src="assets/images/LinkedIn_nolinked_Logo.svg"
+                      />LinkedIn</span
+                    >
+                    <span class="contact-row-value"
+                      ><span class="material-symbols-outlined contact-row-arrow"
+                        >arrow_outward</span
+                      ></span
+                    >
+                  </a>
+                </li>
+                <li class="contact-item">
+                  <a class="contact-row group" href="#">
+                    <span class="contact-row-label"
+                      ><img
+                        alt=""
+                        class="w-5 h-5"
+                        src="assets/images/Google_Scholar_logo.svg"
+                      />Google Scholar</span
+                    >
+                    <span class="contact-row-value"
+                      ><span class="material-symbols-outlined contact-row-arrow"
+                        >arrow_outward</span
+                      ></span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer
+        class="w-full border-t border-outline-variant bg-surface-container-lowest mt-auto py-6"
+      >
+        <div class="page-gutter flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="flex flex-col items-center md:items-start gap-1 text-center md:text-left">
+            <span class="font-mono-label-sm text-on-surface-variant opacity-70"
+              >© 2026 | LUIS FELIPE MONTEMAYOR BRICENO</span
+            >
+            <a
+              id="commit-link"
+              class="font-mono-label-sm text-on-surface-variant opacity-70 hover:opacity-100 hover:text-primary transition-opacity"
+              href="https://github.com/luisfmontemayor/luisfmontemayor.github.io/commit/__COMMIT_SHA__"
+              target="_blank"
+              rel="noopener"
+              >build __COMMIT_SHORT__</a
+            >
+          </div>
+          <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4">
+              <a class="social-link" href="#"
+                ><img alt="Scholar" class="w-6 h-6" src="assets/images/Google_Scholar_logo.svg"
+              /></a>
+              <a class="social-link" href="#"
+                ><img alt="LinkedIn" class="w-6 h-6" src="assets/images/LinkedIn_nolinked_Logo.svg"
+              /></a>
+              <a
+                class="social-link"
+                href="https://github.com/luisfmontemayor"
+                target="_blank"
+                rel="noopener"
+                ><img alt="GitHub" class="w-6 h-6" src="assets/images/Octicons-mark-github.svg"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script type="module" src="dist/main.js"></script>
+  </body>
+</html>
