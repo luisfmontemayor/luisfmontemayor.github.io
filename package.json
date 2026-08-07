@@ -4,15 +4,22 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "npm run build:ts && npm run build:css",
+    "build:ts": "tsc",
+    "build:css": "tailwindcss -i src/styles.css -o dist/styles.css --minify",
+    "serve": "python3 -m http.server 8000",
+    "start": "npm run build && npm run serve",
+    "dev": "npm run build && (sleep 1 && xdg-open http://localhost:8000 &) && npm run serve",
     "typecheck": "tsc --noEmit",
-    "lint": "biome check . && prettier --check \"*.html\"",
-    "format": "biome check --write . && prettier --write \"*.html\"",
+    "lint": "biome check . && prettier --check \"*.html\" \"src/**/*.css\"",
+    "format": "biome check --write . && prettier --write \"*.html\" \"src/**/*.css\"",
     "qa": "npm run format && npm run lint && npm run typecheck"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "playwright": "^1.62.1",
     "prettier": "^3.9.6",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5.6.3"
   }
 }
