@@ -10,6 +10,9 @@
   "[jsonc]": { "editor.defaultFormatter": "biomejs.biome" },
   "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "css.styleSheets": ["src/styles.css"],
+  "css.lint.unknownAtRules": "ignore",
+  "editor.quickSuggestions": { "strings": true },
   "js/ts.tsdk.path": "node_modules/typescript/lib",
   "js/ts.tsdk.promptToUseWorkspaceVersion": true,
   "js/ts.tsserver.experimental.enableProjectDiagnostics": true
