@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Type roles: family + size + line-height + weight bundled per role */
+  .type-display {
+    @apply font-display-lg text-[48px] leading-tight font-bold text-on-surface tracking-tighter md:text-[80px];
+  }
+  .type-lead {
+    @apply font-headline-md text-[24px] leading-relaxed text-on-surface-variant;
+  }
+  .section-heading {
+    @apply font-headline-lg text-[48px] text-on-surface font-semibold;
+  }
+  /* Page horizontal gutters, shared by header, main and footer.
+     Mirrors paco.fyi's model: a centered max-width column per breakpoint
+     with minimal fixed padding, rather than fluid edge padding. */
+  .page-gutter {
+    @apply mx-auto w-full max-w-screen-sm px-2 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-2xl;
+  }
+  /* Section layout */
+  .section {
+    @apply flex flex-col gap-8 scroll-mt-[72px];
+  }
+
+  /* Build cards */
+  .build-card {
+    @apply flex flex-col rounded border border-outline-variant bg-surface p-6 transition-colors hover:border-primary-container;
+  }
+  .build-card-title {
+    @apply font-headline-md text-[24px] text-on-surface font-bold;
+  }
+  .build-card-content {
+    @apply font-body-md text-[18px] text-on-surface-variant flex-1;
+  }
+
+  /* Timeline (education, research, employment) */
+  .timeline {
+    @apply relative flex flex-col gap-6;
+  }
+  .timeline-row {
+    @apply relative flex items-stretch gap-6;
+  }
+  /* Rail stretches to the card's height so the dot can centre against it */
+  .timeline-rail {
+    @apply relative w-4 shrink-0;
+  }
+  /* Connector: each rail draws down into the gap to reach the next dot */
+  .timeline-rail::before {
+    content: "";
+    @apply absolute left-1/2 top-0 w-px -translate-x-1/2 bg-outline-variant;
+    bottom: -1.5rem;
+  }
+  /* Clamp the line to the dot centres so it never overshoots up or down */
+  .timeline-row:first-child .timeline-rail::before {
+    top: 50%;
+  }
+  .timeline-row:last-child .timeline-rail::before {
+    bottom: 50%;
+  }
+  .timeline-marker {
+    @apply absolute left-1/2 top-1/2 z-10 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-background;
+  }
+  .timeline-card {
+    @apply flex flex-col rounded border border-outline-variant bg-surface p-6;
+  }
+  .timeline-card-title {
+    @apply font-headline-md text-[24px] text-on-surface font-bold;
+  }
+  .timeline-card-content {
+    @apply font-body-md text-[18px] text-on-surface-variant mt-1;
+  }
+
+  /* Current Focus (About sidebar) - shares the timeline cards' Geist fonts and CV-button blue */
+  .focus-list {
+    @apply flex flex-col gap-8;
+  }
+  .focus-item {
+    @apply flex flex-col gap-1 border-l border-outline-variant pl-6;
+  }
+  .focus-item-title {
+    @apply font-headline-md text-[24px] text-[#0891b2] font-bold;
+  }
+  .focus-item-content {
+    @apply font-body-md text-[18px] text-on-surface-variant;
+  }
+
+  /* Interactive elements */
+  .nav-pill {
+    @apply relative flex h-10 w-10 shrink-0;
+  }
+  /* Expands as an absolute overlay so hovering never reflows the sibling pills */
+  .nav-pill-body {
+    @apply absolute left-0 top-0 z-0 flex h-10 w-10 items-center overflow-hidden rounded-full bg-transparent text-on-surface-variant transition-all duration-500 ease-in-out group-hover:z-20 group-hover:w-auto group-hover:bg-primary-container group-hover:text-on-primary-container group-focus-visible:z-20 group-focus-visible:w-auto group-focus-visible:bg-primary-container group-focus-visible:text-on-primary-container;
+  }
+  .nav-pill-icon {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center text-[32px];
+  }
+  .nav-pill-label {
+    @apply ml-3 overflow-hidden whitespace-nowrap pr-4 font-mono-label-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100;
+  }
+  .drawer-link {
+    @apply rounded px-4 py-3 font-mono-label-sm text-on-surface-variant transition-colors hover:bg-primary-container hover:text-on-primary-container;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded bg-primary-container font-mono-label-md font-bold text-on-primary-container transition-opacity hover:opacity-90;
+  }
+  .tech-tag {
+    @apply rounded-full bg-surface-container-high px-3 py-1 font-mono-label-sm text-[12px] font-bold tracking-wider text-on-surface;
+  }
+  .social-link {
+    @apply opacity-70 transition-opacity hover:opacity-100;
+  }
+
+  /* Contact rows (mirrors paco.fyi's bordered link list) */
+  .contact-list {
+    @apply border-t border-outline-variant;
+  }
+  .contact-item {
+    @apply border-b border-outline-variant;
+  }
+  .contact-row {
+    @apply flex items-center justify-between gap-4 py-4;
+  }
+  .contact-row-label {
+    @apply flex items-center gap-3 font-mono-label-sm text-on-surface shrink-0;
+  }
+  .contact-row-value {
+    @apply flex items-center gap-2 font-body-md text-[16px] text-on-surface-variant;
+  }
+  .contact-row-arrow {
+    @apply text-[18px] text-on-surface-variant opacity-50 transition-all group-hover:opacity-100 group-hover:text-primary-container group-hover:translate-x-0.5 group-hover:-translate-y-0.5;
+  }
+}
