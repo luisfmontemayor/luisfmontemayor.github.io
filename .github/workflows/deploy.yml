@@ -1,0 +1,68 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run build
+      - name: Assemble site
+        run: |
+          mkdir -p _site/dist
+          cp index.html _site/
+          cp dist/*.js dist/*.css _site/dist/
+          cp -r assets _site/assets
+          [ -f cv.pdf ] && cp cv.pdf _site/ || true
+      - name: Inject contact address
+        env:
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
+        run: |
+          set -euo pipefail
+          if [ -z "${CONTACT_EMAIL:-}" ]; then
+            echo "CONTACT_EMAIL secret is not set" >&2
+            exit 1
+          fi
+          U=$(printf '%s' "${CONTACT_EMAIL%@*}" | base64 -w0)
+          D=$(printf '%s' "${CONTACT_EMAIL#*@}" | base64 -w0)
+          sed -i -e "s|__EMAIL_U__|${U}|g" -e "s|__EMAIL_D__|${D}|g" _site/index.html
+
+      - name: Stamp commit hash
+        run: |
+          sed -i \
+            -e "s/__COMMIT_SHA__/${GITHUB_SHA}/g" \
+            -e "s/__COMMIT_SHORT__/${GITHUB_SHA:0:7}/g" \
+            _site/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
