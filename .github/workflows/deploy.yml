@@ -30,6 +30,8 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site/dist
+          # Copied by name, not *.html: phones.html is a local-only preview
+          # harness and must stay out of the published artifact.
           cp index.html _site/
           cp dist/*.js dist/*.css _site/dist/
           cp -r assets _site/assets

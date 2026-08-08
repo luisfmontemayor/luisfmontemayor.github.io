@@ -11,6 +11,7 @@ Deployment is **not** a raw serve of the `main` branch. A GitHub Actions workflo
 ```text
 luisfmontemayor.github.io/
 ├── index.html              -> Markup only; no inline config or styles
+├── phones.html             -> Local-only preview harness, three synced device widths
 ├── tailwind.config.js      -> Theme tokens (colours, fonts, radius) and content globs
 ├── src/styles.css          -> Tailwind directives + the @layer components library
 ├── src/main.ts             -> Progressive enhancement; compiled to dist/main.js
@@ -20,7 +21,7 @@ luisfmontemayor.github.io/
 └── .github/workflows/      -> Build and deploy pipeline
 ```
 
-`dist/` is **not** committed — it is in `.gitignore` and rebuilt by CI on every push.
+`dist/` is **not** committed — it is in `.gitignore` and rebuilt by CI on every push. `phones.html` is a development tool and is deliberately not copied into the deployed artifact.
 
 ## 3. Deploy-time token substitution
 Two things are injected by CI rather than stored in this repo. Both leave placeholder tokens in the committed `index.html`, and both degrade quietly in local previews where nothing substitutes them.
@@ -58,6 +59,7 @@ npm install
 | `npm run serve` | `python3 -m http.server 8000` | Serve the site at `http://localhost:8000` |
 | `npm run start` | `build` -> `serve` | Build then serve |
 | `npm run dev` | `build` -> open browser -> `serve` | Build, open the browser, and serve |
+| `npm run phones` | `build` -> open `phones.html` on :8001 | Preview three device widths, scroll-synced |
 
 Serve over HTTP rather than opening `index.html` from the filesystem: `dist/main.js` is loaded as an ES module, and `file://` origins are blocked by CORS.
 

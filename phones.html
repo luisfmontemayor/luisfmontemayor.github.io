@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone preview - synced</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #eef2f5;
+        font-family: system-ui, sans-serif;
+        color: #171c1f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 8px;
+      }
+      h1 {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #3d494c;
+        margin: 0 0 12px;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      .phone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      .label {
+        font-size: 12px;
+        font-weight: 600;
+        color: #3d494c;
+      }
+      .bezel {
+        padding: 8px;
+        background: #14181a;
+        border-radius: 20px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      }
+      iframe.device {
+        display: block;
+        height: calc(100vh - 96px);
+        border: 0;
+        border-radius: 12px;
+        background: #ffffff;
+      }
+      .w-360 {
+        width: 360px;
+      }
+      .w-393 {
+        width: 393px;
+      }
+      .w-412 {
+        width: 412px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Synced phone preview</h1>
+    <div class="row">
+      <div class="phone">
+        <span class="label">Galaxy S23 - 360px</span>
+        <div class="bezel">
+          <iframe class="device w-360" src="index.html" title="Galaxy S23"></iframe>
+        </div>
+      </div>
+      <div class="phone">
+        <span class="label">iPhone 15 - 393px</span>
+        <div class="bezel">
+          <iframe class="device w-393" src="index.html" title="iPhone 15"></iframe>
+        </div>
+      </div>
+      <div class="phone">
+        <span class="label">Pixel 7 - 412px</span>
+        <div class="bezel">
+          <iframe class="device w-412" src="index.html" title="Pixel 7"></iframe>
+        </div>
+      </div>
+    </div>
+    <script>
+      const frames = [...document.querySelectorAll("iframe.device")];
+      let lock = false;
+      frames.forEach((f) => {
+        f.addEventListener("load", () => {
+          f.contentWindow.addEventListener("scroll", () => {
+            if (lock) return;
+            lock = true;
+            const y = f.contentWindow.scrollY;
+            for (const o of frames)
+              if (o !== f) o.contentWindow.scrollTo({ top: y, behavior: "instant" });
+            requestAnimationFrame(() => {
+              lock = false;
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
